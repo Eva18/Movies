@@ -1,0 +1,95 @@
+<% moviesA = @peliculaGuardadaLanzamiento.first %>
+<% moviesN = @peliculaGuardadaLanzamiento.last %>
+
+<% moviesD = @peliculaGuardadaDuracion.first %>
+<% moviesDM = @peliculaGuardadaDuracion.last %>
+
+<h2>Reporte Lanzamiento</h2>
+<table>
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Nombre</th>
+			<th>Clasificacion</th>
+			<th>Genero</th>
+			<th><b>Lanzamiento</b></th>
+			<th>Duracion</th>
+			<th colspan="2"></th>
+			<style>
+				body{
+					background-image: url("http://questgarden.com/100/12/9/100405105301/images/movie-film.jpg");
+				}
+				table {
+  					 	width: 100%;
+   						border: 1px solid #000;
+						}
+					th, td {
+							   width: 30%;
+							   text-align: center;
+							   vertical-align: top;
+							   border: 1px solid #000;
+							   border-collapse: collapse;
+							   padding: 0.3em;
+							   caption-side: bottom;
+							}
+							tr:nth-child(event){background-color: #FF69B4}
+					caption {
+							   padding: 0.3em;
+							   color: #fff;
+							   background: #000;
+							}
+							th {
+							   		background: #eee;
+								}
+							img {
+								float: right;
+								margin: 0 0 11px 11px
+							}
+			</style>
+		</tr>
+	</thead>
+	<tbody>
+		<% @peliculaGuardadaLanzamiento.each do |movie| %>
+		<tr>
+			<td><%= movie.id %></td>
+			<td><%= movie.nombre %></td>
+			<td><%= movie.clasificacion %></td>
+			<td><%= movie.genero %></td>
+			<td><b><%= movie.lanzamiento %></b></td>
+			<td><%= movie.duracion %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+<h3> La pelicula mas antigua es: </h3> <h4><%= moviesA.nombre %> </h4>
+<h3> La pelicula mas nueva es: </h3> <h4><%= moviesN.nombre %> </h4>
+
+<h2>Reporte Duracion</h2>
+<table>
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Nombre</th>
+			<th>Clasificacion</th>
+			<th>Genero</th>
+			<th><b>Lanzamiento</b></th>
+			<th>Duracion</th>
+			<th colspan="2"></th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @peliculaGuardadaDuracion.each do |movie| %>
+		<tr>
+			<td><%= movie.id %></td>
+			<td><%= movie.nombre %></td>
+			<td><%= movie.clasificacion %></td>
+			<td><%= movie.genero %></td>
+			<td><%= movie.lanzamiento %></td>
+			<td><b><%= movie.duracion %></b></td>
+		</tr>
+			<% end %>
+	</tbody>
+</table>
+<h3> La pelicula con menos duracion es:</h3> <h4><%= moviesD.nombre %> </h4>
+<h3> La pelicula con mas duracion es:</h3> <h4><%= moviesDM.nombre %> </h4>
+<%= link_to 'Back', movies_path %>

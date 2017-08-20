@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  clasificacion: MyString
+  genero: MyText
+  lanzamiento: 2017-08-16
+  duracion: 2017-08-16 15:03:26
+
+two:
+  nombre: MyString
+  clasificacion: MyString
+  genero: MyText
+  lanzamiento: 2017-08-16
+  duracion: 2017-08-16 15:03:26
